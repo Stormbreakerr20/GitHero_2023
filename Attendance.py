@@ -23,9 +23,23 @@ gray = (128, 128, 128)
 
 # Set up variables
 password = ""
-students = [("You", 1234,"123.4.5.6",80), ("Emily", 5678,"123.4.5.6",90), ("Mike", 9012,"123.4.5.6",92), ("Sara", 3456,"123.4.5.6",95), ("David", 7890,"123.4.5.6",99),
-            ("Anna", 2345,"123.4.5.6",60), ("Tom", 6789,"123.4.5.6",100), ("Julia", 123,"123.4.5.6",10), ("Peter", 4567,"123.4.5.6",2), ("Mary", 8901,"123.4.5.6",99),
-            ("Jake", 5432,"123.4.5.6",98), ("Olivia", 9876,"123.4.5.6",100), ("Nick", 3210,"123.4.5.6",93), ("Eva", 7654,"123.4.5.6",97), ("Sam", 1098,"123.4.5.6",99)]
+students = [
+    ("You", 1234, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Emily", 5678, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Mike", 9012, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Sara", 3456, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("David", 7890, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Anna", 2345, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Tom", 6789, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Julia", 123, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Peter", 4567, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Mary", 8901, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Jake", 5432, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Olivia", 9876, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Nick", 3210, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Eva", 7654, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+    ("Sam", 1098, f"123.4.5.{random.randint(1, 255)}", random.randint(90, 100)),
+]
 student_texts = [font.render(f"{i+1}. {name}/{id}: {ip} : {att}", True, white) for i, (name, id,ip,att) in enumerate(students)]
 is_logged_in = False
 radius_1 = 100
@@ -153,8 +167,8 @@ while running:
             count+=1
             pygame.time.wait(200)
             pygame.display.update()
-            if(count==15):
-                list_typed=True
+            # if(count==15):
+            #     list_typed=True
     
     if(list_typed==True):
         pygame.time.wait(10000)
